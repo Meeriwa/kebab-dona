@@ -1,0 +1,122 @@
+.home {
+  height: 100vh;
+  background: url(../images/home/bg.png) center / cover no-repeat;
+  padding-top: 234px;
+  color: #fff;
+  display: flex;
+
+  .splide {
+    height: 100%;
+  }
+
+  &__title {
+    font-weight: 200;
+    font-size: 48px;
+    line-height: 76px;
+    text-transform: uppercase;
+    max-width: 1000px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__desc {
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 23px;
+    max-width: 570px;
+    margin-bottom: 45px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 570px;
+    row-gap: 21px;
+    column-gap: 30px;
+    padding-left: 0;
+    margin-bottom: 52px;
+  }
+
+  &__item {
+    width: calc(50% - 30px);
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    padding-left: 27px;
+    list-style: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 16px;
+      height: 8.5px;
+      background: url(../images/home/galo4ki.svg);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 741px;
+    width: 100%;
+  }
+
+  .splide__pagination {
+    gap: 80px;
+    justify-content: flex-start;
+
+    li {
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: '';
+        width: 1px;
+        height: 40px;
+        background-color: #fff;
+        position: absolute;
+        top: calc(100% + 20px);
+        left: 50%;
+      }
+
+      &:nth-child(1) {
+        button::before {
+          content: '01';
+        }
+      }
+
+      &:nth-child(2) {
+        button::before {
+          content: '02';
+        }
+      }
+
+      &:nth-child(3) {
+        button::before {
+          content: '03';
+        }
+      }
+    }
+  }
+
+  .splide__pagination__page {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+
+    &.is-active {
+      &::before {
+        color: #fff;
+      }
+    }
+
+    &::before {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
